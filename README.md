@@ -1,47 +1,93 @@
-# Getting Started with Create React App
+ React TypeScript App with Reusable Components and Responsive SCSS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It utilizes TypeScript for static typing, reusable components for efficient development, and SCSS with variables and mixins for a responsive and maintainable design.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* **TypeScript:** Ensures type safety and improves code maintainability.
+* **Reusable Components:** Promotes code reusability and reduces redundancy.
+* **Responsive Design:** Achieved using SCSS with variables and mixins for flexible layouts across different screen sizes.
+* **SCSS:** Offers advanced styling capabilities with variables, mixins, and nested rules.
+* **Create React App:** Provides a streamlined development environment.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Node.js (>= 21.7.3)
+* npm or yarn
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1.  **Clone the repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    git clone <your-repository-url>
+    cd <your-project-directory>
+    ```
 
-### `npm run build`
+2.  **Install dependencies:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Using npm:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Or using yarn:
 
-### `npm run eject`
+    ```bash
+    yarn install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  **Start the development server:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    Using npm:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    npm start
+    ```
+
+    Or using yarn:
+
+    ```bash
+    yarn start
+    ```
+
+    This will open the application in your default browser at `http://localhost:3000`.
+
+## Building for Production
+
+1.  **Build the application:**
+
+    Using npm:
+
+    ```bash
+    npm run build
+    ```
+
+    Or using yarn:
+
+    ```bash
+    yarn build
+    ```
+
+    This will create an optimized production build in the `build` directory.
+
+
+## SCSS Structure
+
+* **`_variables.scss`:** Defines global SCSS variables for colors, fonts, breakpoints, etc.
+* **`_mixins.scss`:** Contains reusable SCSS mixins for responsive layouts, media queries, etc.
+* **`_global.scss`:** The main SCSS file that imports variables, mixins, and other style files.
+
+## Contributing
+
+Feel free to contribute to this project by submitting pull requests or opening issues.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# razor-app
+* [Create React App documentation](https://create-react-app.dev/docs/getting-started)
+* [TypeScript documentation](https://www.typescriptlang.org/docs/)
+* [SCSS documentation](https://sass-lang.com/documentation)
+* [React documentation](https://reactjs.org/docs/getting-started.html)
