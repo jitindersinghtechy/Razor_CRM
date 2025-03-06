@@ -1,0 +1,17 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-justify-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flex-align-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@mixin box-shadow {
+  box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.12);
+}
