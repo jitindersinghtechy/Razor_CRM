@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopLeftNavbar from './TopLeftNavbar';
 import TopRightNavbar from './TopRightNavbar';
 
@@ -6,6 +6,7 @@ import TopRightNavbar from './TopRightNavbar';
 const TopNavbar = (props: any) => {
     const open: string | boolean = props.open;
     const links: Array<{ name: string, href: string }> = props.links;
+    const [openResponsiveMenu, setOpenResponsiveMenu] = useState<boolean>(false)
 
     /**
      * Handles the click event for the primary menu items.
@@ -20,10 +21,15 @@ const TopNavbar = (props: any) => {
         props.setActivePrimaryMenu(props.primaryMenuName);
     }
 
+    const setResponsiveMenuHandler = () => {
+        setOpenResponsiveMenu(!openResponsiveMenu)
+    }
+    
+
     return (
         <div onClick={onClick} className='top-header'>
-            <TopLeftNavbar />
-            <TopRightNavbar />
+            <TopLeftNavbar openResponsiveMenu={openResponsiveMenu} />
+            <TopRightNavbar setResponsiveMenuHandler={setResponsiveMenuHandler} />
         </div>
     );
 

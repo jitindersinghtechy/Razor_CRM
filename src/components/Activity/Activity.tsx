@@ -55,7 +55,7 @@ const ActivityItem = ({
 }: ActivityItemProps) => (
   <li className="item">
     <span className="step"></span>
-    <div>
+    <div className="step-info">
       <span className="top-tag">{invoiceId}</span>
       <div className="info">
         <p className="title">{title}</p>

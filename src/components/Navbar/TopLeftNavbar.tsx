@@ -1,11 +1,11 @@
 import MenuItem from "./MenuItem";
 import AppLogo from "../AppLogo/AppLogo";
 
-const TopLeftNavbar = () => {
+const TopLeftNavbar = ({openResponsiveMenu}:{openResponsiveMenu:boolean}) => {
   return (
     <div className="left-content">
       <AppLogo />
-      <ul className="menu-items">
+      <ul className={`menu-items ${openResponsiveMenu?'fixed':''}`}>
         <MenuItem title="Dashboard" />
         <MenuItem title="CRM" />
         <MenuItem title="Inventory" />

@@ -5,13 +5,14 @@ interface CardProps {
   title?: string;
   image?: string;
   classname?: string;
+  withHeaderBorderClass?:string
 }
 
-const Card: React.FC<CardProps> = ({ children, title, image, classname }) => {
+const Card: React.FC<CardProps> = ({ children, title, image, classname, withHeaderBorderClass }) => {
   return (
     <>
       <div className={`${classname}`}>
-        <div className="card-item w-full text-left">
+        <div className={`card-item w-full text-left ${withHeaderBorderClass}`}>
           <div className="header">
             <img src={image} alt="" />
             <span className="title">{title}</span>

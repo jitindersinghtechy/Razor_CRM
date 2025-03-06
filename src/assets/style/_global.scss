@@ -11,6 +11,12 @@ ul {
 .top-header {
   background: $dark-bg;
   @include flex-justify-between;
+  .toggle-icon {
+    display: none;
+    @include respond-to(tablet) {
+      display: unset;
+    }
+  }
   .left-content {
     @include flex-center;
     .logo {
@@ -22,6 +28,20 @@ ul {
     @include flex-center;
     padding-left: 0;
     margin: 0;
+    @include respond-to(desktop) {
+      display: none;
+      &.fixed {
+      position: fixed;
+        background: #fff;
+        top: 40px;
+        display: block;
+        width: 80%;
+        right: 0;
+        z-index: 99;
+        height: 100%;
+      }
+    }
+    
     li {
       @include flex-center;
       gap: 6px;
@@ -29,6 +49,14 @@ ul {
       font-size: 14px;
       .menu-name {
         color: $text-gray-medium;
+        @include respond-to(desktop) {
+          color: $text-black;
+        }
+      }
+      @include respond-to(desktop) {
+        svg path {
+          fill: $text-black;
+        }
       }
     }
   }
@@ -46,6 +74,9 @@ ul {
 .account-details {
   @include flex-justify-between;
   padding: 12px 24px;
+  @include respond-to(mobile) {
+    display: block
+}
   .header-navigation {
     @include flex-center;
     .back-icon {
@@ -62,6 +93,9 @@ ul {
       font-size: 20px;
       font-weight: 540;
       color: $text-black;
+      @include respond-to(desktop) {
+        font-size: 16px;
+    }
     }
   }
   .header-actions {
@@ -74,6 +108,10 @@ ul {
       font-weight: 540;
       padding: 6px 12px;
       margin-right: 12px;
+      @include respond-to(mobile) {
+        font-size: 12px;
+        padding: 6px 6px;
+      }
       &.btn-border {
         background: $white-bg;
       }
@@ -98,11 +136,17 @@ ul {
   background-size: cover;
   padding: 22px 24px;
   @include flex-align-top;
+  @include respond-to(mobile) {
+    display: block;
+}
   .info {
     @include flex-center;
     gap: 12px;
     color: $text-white;
     text-align: left;
+    @include respond-to(mobile) {
+      margin-bottom: 20px;
+  }
     .title {
       font-size: 24px;
       font-weight: 540;
@@ -116,6 +160,9 @@ ul {
   }
   .pagination {
     @include flex-center;
+    @include respond-to(mobile) {
+      justify-content: end;
+  }
     .count {
       font-size: 14px;
       font-weight: 460;
@@ -178,6 +225,9 @@ ul {
       font-size: 16px;
       font-weight: 540;
       color: $text-black;
+      @include respond-to(desktop) {
+        font-size: 14px;
+    }
     }
   }
   ul {
@@ -185,6 +235,9 @@ ul {
     max-height: 260px;
     overflow-y: auto;
     margin: 0;
+    @include respond-to(tablet) {
+      max-height: 100%;
+  }
     &::-webkit-scrollbar {
       width: 10px;
       height: 10px;
@@ -210,6 +263,9 @@ ul {
       color: $text-black;
       font-size: 16px;
       font-weight: 600;
+      @include respond-to(desktop) {
+        font-size: 14px;
+    }
     }
 &:last-child {
   margin-bottom: 0;
@@ -231,9 +287,20 @@ ul {
   .contact-items {
     position: relative;
     min-height: 250px;
-    .row.bottom-blur {
-      mask: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);
-      -webkit-mask: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);}
+    .row {    
+      &.bottom-blur {
+        mask: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);
+        -webkit-mask: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);        
+      }
+      .col-6 {
+        flex: 0 0 48.4%;
+        width: 48.4%;
+        @include respond-to(desktop) {
+          flex: 0 0 100%;
+          width: 100%;
+      }
+      }
+    }
   .contact-list {
     @include flex-center;
     gap: 8px;
@@ -243,7 +310,10 @@ ul {
         font-size: 14px;
         font-weight: 540;
         margin-bottom: 4px;
-        display: block
+        display: block;
+        @include respond-to(desktop) {
+          font-size: 12px;
+      }
       }
       .sub-title {
         @include flex-center;
@@ -271,6 +341,9 @@ ul {
       font-weight: 600;
       color: $text-black;
       margin: 0;
+      @include respond-to(desktop) {
+        font-size: 12px;
+    }
     }
   }
   .view-action {
@@ -282,6 +355,15 @@ ul {
     text-decoration: unset;
     left: 50%;
     transform: translateX(-50%);
+    @include respond-to(mobile) {
+      font-weight: 540;
+      position: relative;
+      bottom: unset;
+      left: unset;
+      transform: unset;
+      text-align: center;
+      display: block;
+  }
   }
   
 }
@@ -300,11 +382,18 @@ ul {
   .map-info {
     padding: 20px 0;
     width: 100%;
+    @include respond-to(tablet) {
+      padding: 20px;
+  }
     .one-line-info {
       @include flex-center;
       gap: 12px;
       .address-list {
         flex: 1;
+        
+      @include respond-to(tablet) {
+        margin-bottom: 24px;
+    }
       }
     }
     .address-list {
@@ -312,6 +401,10 @@ ul {
       .title {
         margin-bottom: 8px;
       }
+      
+      @include respond-to(tablet) {
+        margin-bottom: 24px;
+    }
     }
   }
 }
@@ -324,13 +417,19 @@ ul {
 }
 .col-4 {
   display: flex;
-  flex: 0 0 auto;
-  width: 32.7%;
+  flex: 1;
+  @include respond-to(tablet) {
+    flex: 0 0 100%;
+    width: 100%;
+} 
 }
 .col-6 {
   display: flex;
-  flex: 0 0 auto;
-  width: 49%;
+  flex: 1;
+  @include respond-to(tablet) {
+    flex: 0 0 100%;
+    width: 100%;
+} 
 }
 .w-full {
   width: 100%;
@@ -366,6 +465,9 @@ ul {
   display: flex;
   gap: 16px;
   position: relative;
+  @include respond-to(desktop) {
+    padding-bottom: 10px;
+}
   .step {
     background: rgba(49, 184, 97, 1);
     width: 16px;
@@ -373,6 +475,9 @@ ul {
     border: 8px solid $neutral-gray;
     border-radius: 100%;
     display: inline-block;
+  }
+  .step-info {
+    flex: 1;
   }
   .top-tag {
     font-size: 14px;
@@ -384,22 +489,45 @@ ul {
     border-radius: 4px;
     margin-bottom: 12px;
     display: inline-block;
+    @include respond-to(desktop) {
+      font-size: 12px;
+      margin-bottom: 6px;
+  }
   }
   .info {
     margin-bottom: 12px;
+    @include respond-to(desktop) {
+      margin-bottom: 6px;
+  }
     .title {
       font-size: 16px;
       font-weight: 540;
       color: $text-black;
       margin: 0 0 4px 0;
+      @include respond-to(desktop) {
+        font-size: 12px;
+    }
     }
     .sub-info {
       @include flex-center;
+      @include respond-to(tablet) {
+        display: block;
+        .date, .profile, .price{
+          margin-bottom: 10px;
+          display: block;
+        }
+        .separator {
+          display: none;
+        }
+    } 
       gap: 12px;
       color: $text-gray-light;
       font-size: 14px;
       font-weight: 460;
       margin: 0;
+      @include respond-to(desktop) {
+        font-size: 12px;
+    }
       .profile {
         @include flex-center;
         gap: 8px;
@@ -420,7 +548,7 @@ ul {
     background: $neutral-gray;
     padding: 12px;
     border-radius: 4px;
-    width: 480px;
+    max-width: 480px;
     .title {
       @include flex-center;
       gap: 6px;

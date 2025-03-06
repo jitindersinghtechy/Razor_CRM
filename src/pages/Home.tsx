@@ -49,7 +49,7 @@ const Home = (props: any) => {
           </Card>
         </div>
         <div className="row">
-          <Card title="Headquarters" image={locationIcon} classname={"col-6"}>
+          <Card title="Headquarters" image={locationIcon} classname={"col-6"} withHeaderBorderClass="with-header-border">
             <Headquarters frameMap={frameMap} />
           </Card>
           <Card title="Activity" image={addressIcon} classname={"col-6"}>
