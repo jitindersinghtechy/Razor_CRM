@@ -35,7 +35,7 @@ const Headquarters = ({ frameMap }: { frameMap: string }) => {
       <div className="contact-items">
         <div className="row mb-0">
           <div className="col-6">
-            <img src={frameMap} alt="Map" />
+            <img src={frameMap} alt="Map" className="w-full" />
           </div>
           <div className="col-6">
             <div className="map-info">
